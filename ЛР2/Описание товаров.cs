@@ -8,8 +8,8 @@ namespace Lab2
 {
     internal class Описание_товаров
     {
-        private string Name;
-        private double price;
+        private string Name { get; set; }
+        private double price { get; set; }
 
 
         public Описание_товаров(string Название, double Цена)

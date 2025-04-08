@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-        public struct Запись_о_продаже
-        {
-            private int Количество;
-            private int День_продажи;
-            private Описание_товаров Товар;;
-        }
+    internal class SalesHistory
+    {
+        Dictionary<Аптека, List<Запись_о_продаже>> SalesDictionary = new Dictionary<Аптека, List<Запись_о_продаже>>();
+    }
 }
