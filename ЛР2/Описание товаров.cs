@@ -8,22 +8,22 @@ namespace Lab2
 {
     internal class Описание_товаров
     {
-        private string Name { get; set; }
-        private double price { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
 
 
-        public Описание_товаров(string Название, double Цена)
+        public Описание_товаров(string Name, double Price)
         {
-           Название = Name;
-           Цена = price;
+           this.Name = Name;
+           this.Price = Price;
         }
-        public string SayName()
+        public string GetName()
         {
             return Name;
         }
-        public double SayPrice()
+        public double GetPrice()
         {
-            return price;
+            return Price;
         }
     }
 }
