@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    internal class Описание_товаров
+    internal class Product
     {
         public string Name { get; set; }
         public double Price { get; set; }
 
 
-        public Описание_товаров(string Name, double Price)
+        public Product(string Name, double Price)
         {
            this.Name = Name;
            this.Price = Price;

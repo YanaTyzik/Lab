@@ -10,7 +10,7 @@ namespace Lab2
     {
         public int Количество;
         public int День_продажи { get; set; }
-        public Описание_товаров Товар;
+        public Product Товар;
     }
         
 }

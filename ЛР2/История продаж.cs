@@ -14,19 +14,25 @@ namespace Lab2
             return SalesDictionary;
         }
 
-        public void ДобавитьПродажу(Аптека тип, Запись_о_продаже запись)
+        public void AddSale(Аптека group, Запись_о_продаже запись_О_Продаже)
         {
-            if (!продажи.ContainsKey(тип))
-                продажи[тип] = new List<Запись_о_продаже>();
-
-            продажи[тип].Add(запись);
+            if (!SalesDictionary.CountainsKey(group))
+            {
+                SalesDictionary.Add(group, new List<Запись_о_продаже>());
+            }
+            SalesDictionary[group].Add(запись_О_Продаже);
         }
 
-        public List<Запись_о_продаже> ПолучитьПродажи(Аптека тип) =>
-            продажи.ContainsKey(тип) ? продажи[тип] : new List<Запись_о_продаже>();
-
-        public decimal ПолучитьСуммуПоКатегории(Аптека тип) =>
-            ПолучитьПродажи(тип).Sum(продажа => продажа.ПолучитьСумму());
+        public int GetTotalQuantityByGroup(Аптека group)
+        {
+            int total = 0;
+            if (SalesDictionary.CountainsKey(group))
+            {
+                foreach (var запись_О_Продаже in SalesDictionary[group])
+                {
+                    total += запись_О_Продаже.Количество;
+                }
+            }
+        }
     }
-}
 }
