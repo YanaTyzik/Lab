@@ -21,7 +21,7 @@ namespace Lab2
                 SalesDictionary.Add(group, new List<Запись_о_продаже>());
                 SalesDictionary[group].Add(запись_О_Продаже);
             }
-            
+
         }
 
         public int GetTotalQuantityByGroup(Аптека group)
@@ -39,6 +39,27 @@ namespace Lab2
             {
                 return 0;
             }
+
         }
+        public void PrintSalesSummary()
+        {
+            foreach (var groupSales in SalesDictionary)
+            {
+                Аптека group = groupSales.Key;
+                List<Запись_о_продаже> salesList = groupSales.Value;
+
+                Console.WriteLine($"Группа товаров: {group}");
+
+                foreach (var sale in salesList)
+                {
+                    Console.WriteLine($"В {sale.День_продажи} день было продано товара {sale.Товар.Name} в кол-ве {sale.Количество}");
+                }
+            }
+
+        }
+
+
     }
+
+
 }
