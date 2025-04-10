@@ -16,22 +16,28 @@ namespace Lab2
 
         public void AddSale(Аптека group, Запись_о_продаже запись_О_Продаже)
         {
-            if (!SalesDictionary.CountainsKey(group))
+            if (!SalesDictionary.ContainsKey(group))
             {
                 SalesDictionary.Add(group, new List<Запись_о_продаже>());
+                SalesDictionary[group].Add(запись_О_Продаже);
             }
-            SalesDictionary[group].Add(запись_О_Продаже);
+            
         }
 
         public int GetTotalQuantityByGroup(Аптека group)
         {
             int total = 0;
-            if (SalesDictionary.CountainsKey(group))
+            if (SalesDictionary.ContainsKey(group))
             {
                 foreach (var запись_О_Продаже in SalesDictionary[group])
                 {
                     total += запись_О_Продаже.Количество;
                 }
+                return total;
+            }
+            else
+            {
+                return 0;
             }
         }
     }
