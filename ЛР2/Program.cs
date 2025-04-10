@@ -30,9 +30,19 @@ namespace Lab2
             history.AddSale(Аптека.Антибиотики, sale4);
             history.AddSale(Аптека.Спазмолитики, sale5);
 
+            double RP = history.GetTotalQuantityByGroup(Аптека.Парацетомол);
+            double Rs = history.GetTotalQuantityByGroup(Аптека.Шприцы);
+            double Rd = history.GetTotalQuantityByGroup(Аптека.Противовирусные);
+            double Rr = history.GetTotalQuantityByGroup(Аптека.Антибиотики);
+            double Rp = history.GetTotalQuantityByGroup(Аптека.Спазмолитики);
+
             history.PrintSalesSummary();
 
-         
+            Console.WriteLine($"Общая выручка от парацетомола: {RP}");
+            Console.WriteLine($"Общая выручка от шприцов: {Rs}");
+            Console.WriteLine($"Общая выручка от противовирусных: {Rd}");
+            Console.WriteLine($"Общая выручка от антибиотиков: {Rr}");
+            Console.WriteLine($"Общая выручка от спазмолитиков: {Rp}");
         }
     }
 }

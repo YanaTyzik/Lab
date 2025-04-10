@@ -24,14 +24,14 @@ namespace Lab2
 
         }
 
-        public int GetTotalQuantityByGroup(Аптека group)
+        public double GetTotalQuantityByGroup(Аптека group)
         {
-            int total = 0;
+            double total = 0;
             if (SalesDictionary.ContainsKey(group))
             {
-                foreach (var запись_О_Продаже in SalesDictionary[group])
+                foreach (var sale in SalesDictionary[group])
                 {
-                    total += запись_О_Продаже.Количество;
+                    total += sale.Товар.Price * sale.Количество;
                 }
                 return total;
             }
